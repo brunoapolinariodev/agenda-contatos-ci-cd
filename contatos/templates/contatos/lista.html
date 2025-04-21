@@ -1,0 +1,9 @@
+<h1>Contatos</h1>
+<a href="{% url 'criar_contato' %}">Novo Contato</a>
+<ul>
+  {% for contato in contatos %}
+    <li>{{ contato.nome }} - {{ contato.telefone }} - {{ contato.email }}
+        <a href="{% url 'deletar_contato' contato.id %}">[Excluir]</a>
+    </li>
+  {% endfor %}
+</ul>
